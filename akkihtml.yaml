@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: akkihtml-deployment
+  labels:
+    app: akash-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: akash-app
+  template:
+    metadata:
+      labels:
+        app: akash-app
+    spec:
+      containers:
+      - name: akash-app
+        image: ajs3ra8/akash-app:5.0
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: akash-app-service
+spec:
+  selector:
+    app: akash-app
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 31000
