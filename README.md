@@ -26,13 +26,13 @@ Run the following command:
 You can confirm that this has worked by running the command:
 
 -> docker images
-==================================================================================
-need to add command for Docker to configure ports---pending
-==================================================================================
+
+note:- need to add command for Docker to configure ports---pending
+
 push the image to "https://hub.docker.com/repository/docker/ajs3ra8/akash-app" repository
 
 -> docker push ajs3ra8/akash-app:tagname
-===================================================================================
+
 Create deployment and services "akkihtml.yaml" and deploy in OpenShift
 
 -> kubectl create -f akkihtml.yaml
