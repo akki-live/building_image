@@ -1,0 +1,14 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: akkihtml-ingress
+spec:
+  rules:
+    - host: akkihtml.com
+      http:
+        paths:
+        - backend:
+              serviceName: akash-app-service
+              servicePort: 80
+
+
